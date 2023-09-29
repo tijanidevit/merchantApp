@@ -5,6 +5,7 @@ node_modules/
 
 # Expo
 .expo/
+.history/
 dist/
 web-build/
 
@@ -33,3 +34,4 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+

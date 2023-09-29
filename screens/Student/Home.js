@@ -1,10 +1,12 @@
 import React from 'react'
 import { Avatar, Card, Paragraph, Text, Title } from 'react-native-paper'
+// const s = require('../../style');
+import 'bootstrap/dist/css/bootstrap.css';
 
 export const Home = () => {
     return (
         <>
-            <Card>
+            <Card style={my2}>
                 <Card.Content>
                     <Avatar.Image size={32} source={require('../../assets/user.png')} />
                     <Text>Hi, James</Text>
