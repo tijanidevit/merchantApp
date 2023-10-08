@@ -1,0 +1,70 @@
+{
+    "sourceFile": "screens/Auth/Register.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1696798788528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696799200416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,8 +59,18 @@\n                 icon=\"email\"\r\n                 keyboardType=\"email-address\"\r\n               />\r\n             </FormGroup>\r\n+            <FormGroup>\r\n+              <Input\r\n+                label=\"Email address\"\r\n+                placeholder=\"me@wallet.com\"\r\n+                control={control}\r\n+                name=\"email\"\r\n+                icon=\"email\"\r\n+                keyboardType=\"email-address\"\r\n+              />\r\n+            </FormGroup>\r\n \r\n             <FormGroup>\r\n               <Input\r\n                 label=\"Password\"\r\n"
+                },
+                {
+                    "date": 1696799227382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,16 +51,17 @@\n \r\n           <View style={gs.my2}>\r\n             <FormGroup>\r\n               <Input\r\n-                label=\"Email address\"\r\n-                placeholder=\"me@wallet.com\"\r\n+                label=\"Fullname\"\r\n+                placeholder=\"Adekunle Lawal\"\r\n                 control={control}\r\n-                name=\"email\"\r\n-                icon=\"email\"\r\n-                keyboardType=\"email-address\"\r\n+                name=\"fullname\"\r\n+                icon=\"fullname\"\r\n+                keyboardType=\"default\"\r\n               />\r\n             </FormGroup>\r\n+\r\n             <FormGroup>\r\n               <Input\r\n                 label=\"Email address\"\r\n                 placeholder=\"me@wallet.com\"\r\n"
+                },
+                {
+                    "date": 1696799266126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -89,16 +89,18 @@\n                 style={gs.btn}\r\n                 mode=\"contained\"\r\n                 onPress={handleSubmit(onSubmit)}\r\n               >\r\n-                Register\r\n+                Login\r\n               </Button>\r\n             </View>\r\n \r\n             <View style={[gs.formGroup, gs.flex, gs.flexRow, gs.justifyCenter]}>\r\n-              <Paragraph variant=\"bodyLarge\">New here? </Paragraph>\r\n+              <Paragraph variant=\"bodyLarge\">\r\n+                Already have an account?{\" \"}\r\n+              </Paragraph>\r\n               <TouchableOpacity mode=\"text\">\r\n-                <Text variant=\"bodyLarge\">Register here</Text>\r\n+                <Text variant=\"bodyLarge\">Login here</Text>\r\n               </TouchableOpacity>\r\n             </View>\r\n           </View>\r\n         </View>\r\n"
+                },
+                {
+                    "date": 1696799600825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,21 +15,21 @@\n import { useForm } from \"react-hook-form\";\r\n import { Alert, FormGroup, Input } from \"../../components\";\r\n import { RegisterSchema } from \"../../src\";\r\n import { yupResolver } from \"@hookform/resolvers/yup\";\r\n-import { useRegister } from \"../../src/hooks/auth/UseRegister\";\r\n+// import { useRegister } from \"../../src/hooks/auth/UseRegister\";\r\n \r\n export const Register = () => {\r\n-  const { mutate, isLoading, isError, error } = useRegister();\r\n+  // const { mutate, isLoading, isError, error } = useRegister();\r\n   const {\r\n     control,\r\n     handleSubmit,\r\n     watch,\r\n     mode: onChangeText,\r\n     formState: { errors },\r\n   } = useForm({ resolver: yupResolver(RegisterSchema) });\r\n   const onSubmit = (data) => {\r\n-    mutate(data);\r\n+    // mutate(data);\r\n   };\r\n   return (\r\n     <SafeAreaView>\r\n       <View style={s.main}>\r\n"
+                },
+                {
+                    "date": 1696799638201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n   };\r\n   return (\r\n     <SafeAreaView>\r\n       <View style={s.main}>\r\n-        {isError && <Alert message={error.message} show={true} />}\r\n+        {/* {isError && <Alert message={error.message} show={true} />} */}\r\n \r\n         <View style={s.walletArea}>\r\n           <Image\r\n             style={s.walletImg}\r\n@@ -83,9 +83,9 @@\n                 onPress={() => console.log(\"pressed\", \"pressed\")}\r\n               />\r\n             </FormGroup>\r\n             <View style={gs.my2}>\r\n-              {isLoading && <ActivityIndicator color={MD2Colors.red800} />}\r\n+              {/* {isLoading && <ActivityIndicator color={MD2Colors.red800} />} */}\r\n               <Button\r\n                 style={gs.btn}\r\n                 mode=\"contained\"\r\n                 onPress={handleSubmit(onSubmit)}\r\n"
+                },
+                {
+                    "date": 1696799655478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n                 label=\"Fullname\"\r\n                 placeholder=\"Adekunle Lawal\"\r\n                 control={control}\r\n                 name=\"fullname\"\r\n-                icon=\"fullname\"\r\n+                icon=\"user\"\r\n                 keyboardType=\"default\"\r\n               />\r\n             </FormGroup>\r\n \r\n"
+                },
+                {
+                    "date": 1696799662345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n                 label=\"Fullname\"\r\n                 placeholder=\"Adekunle Lawal\"\r\n                 control={control}\r\n                 name=\"fullname\"\r\n-                icon=\"user\"\r\n+                icon=\"person\"\r\n                 keyboardType=\"default\"\r\n               />\r\n             </FormGroup>\r\n \r\n"
+                },
+                {
+                    "date": 1696799667507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n                 label=\"Fullname\"\r\n                 placeholder=\"Adekunle Lawal\"\r\n                 control={control}\r\n                 name=\"fullname\"\r\n-                icon=\"person\"\r\n+                icon=\"list\"\r\n                 keyboardType=\"default\"\r\n               />\r\n             </FormGroup>\r\n \r\n"
+                },
+                {
+                    "date": 1696799672771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n                 label=\"Fullname\"\r\n                 placeholder=\"Adekunle Lawal\"\r\n                 control={control}\r\n                 name=\"fullname\"\r\n-                icon=\"list\"\r\n+                icon=\"book\"\r\n                 keyboardType=\"default\"\r\n               />\r\n             </FormGroup>\r\n \r\n"
+                },
+                {
+                    "date": 1696799746058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n import { RegisterSchema } from \"../../src\";\r\n import { yupResolver } from \"@hookform/resolvers/yup\";\r\n // import { useRegister } from \"../../src/hooks/auth/UseRegister\";\r\n \r\n-export const Register = () => {\r\n+export const Register = ({ navigation }) => {\r\n   // const { mutate, isLoading, isError, error } = useRegister();\r\n   const {\r\n     control,\r\n     handleSubmit,\r\n"
+                },
+                {
+                    "date": 1696799751159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n // import { useRegister } from \"../../src/hooks/auth/UseRegister\";\r\n \r\n export const Register = ({ navigation }) => {\r\n   // const { mutate, isLoading, isError, error } = useRegister();\r\n+\r\n   const {\r\n     control,\r\n     handleSubmit,\r\n     watch,\r\n"
+                },
+                {
+                    "date": 1696799778827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,17 +90,20 @@\n                 style={gs.btn}\r\n                 mode=\"contained\"\r\n                 onPress={handleSubmit(onSubmit)}\r\n               >\r\n-                Login\r\n+                Register\r\n               </Button>\r\n             </View>\r\n \r\n             <View style={[gs.formGroup, gs.flex, gs.flexRow, gs.justifyCenter]}>\r\n               <Paragraph variant=\"bodyLarge\">\r\n                 Already have an account?{\" \"}\r\n               </Paragraph>\r\n-              <TouchableOpacity mode=\"text\">\r\n+              <TouchableOpacity\r\n+                mode=\"text\"\r\n+                onPress={() => navigation.navigate(\"Login\")}\r\n+              >\r\n                 <Text variant=\"bodyLarge\">Login here</Text>\r\n               </TouchableOpacity>\r\n             </View>\r\n           </View>\r\n"
+                },
+                {
+                    "date": 1696800063919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,9 +102,11 @@\n               <TouchableOpacity\r\n                 mode=\"text\"\r\n                 onPress={() => navigation.navigate(\"Login\")}\r\n               >\r\n-                <Text variant=\"bodyLarge\">Login here</Text>\r\n+                <Text style={gs.textPrimary} variant=\"bodyLarge\">\r\n+                  Login here\r\n+                </Text>\r\n               </TouchableOpacity>\r\n             </View>\r\n           </View>\r\n         </View>\r\n"
+                }
+            ],
+            "date": 1696798788528,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\r\nimport { Image, TouchableOpacity } from \"react-native\";\r\nimport { View } from \"react-native\";\r\nimport {\r\n  Paragraph,\r\n  Button,\r\n  ActivityIndicator,\r\n  MD2Colors,\r\n} from \"react-native-paper\";\r\nimport { Text } from \"react-native-paper\";\r\nconst s = require(\"./AuthStyle\");\r\nconst gs = require(\"../../style\");\r\nimport { SafeAreaView } from \"react-native-safe-area-context\";\r\nimport WalletImg from \"../../assets/img/wallet.jpg\";\r\nimport { useForm } from \"react-hook-form\";\r\nimport { Alert, FormGroup, Input } from \"../../components\";\r\nimport { RegisterSchema } from \"../../src\";\r\nimport { yupResolver } from \"@hookform/resolvers/yup\";\r\nimport { useRegister } from \"../../src/hooks/auth/UseRegister\";\r\n\r\nexport const Register = () => {\r\n  const { mutate, isLoading, isError, error } = useRegister();\r\n  const {\r\n    control,\r\n    handleSubmit,\r\n    watch,\r\n    mode: onChangeText,\r\n    formState: { errors },\r\n  } = useForm({ resolver: yupResolver(RegisterSchema) });\r\n  const onSubmit = (data) => {\r\n    mutate(data);\r\n  };\r\n  return (\r\n    <SafeAreaView>\r\n      <View style={s.main}>\r\n        {isError && <Alert message={error.message} show={true} />}\r\n\r\n        <View style={s.walletArea}>\r\n          <Image\r\n            style={s.walletImg}\r\n            source={WalletImg}\r\n            width={10}\r\n            height={10}\r\n          />\r\n        </View>\r\n\r\n        <View style={gs.container}>\r\n          <Text variant=\"headlineLarge\" style={gs.bold}>\r\n            Register\r\n          </Text>\r\n\r\n          <View style={gs.my2}>\r\n            <FormGroup>\r\n              <Input\r\n                label=\"Email address\"\r\n                placeholder=\"me@wallet.com\"\r\n                control={control}\r\n                name=\"email\"\r\n                icon=\"email\"\r\n                keyboardType=\"email-address\"\r\n              />\r\n            </FormGroup>\r\n\r\n            <FormGroup>\r\n              <Input\r\n                label=\"Password\"\r\n                placeholder=\"******\"\r\n                control={control}\r\n                icon=\"eye\"\r\n                name=\"password\"\r\n                secureTextEntry={true}\r\n                onPress={() => console.log(\"pressed\", \"pressed\")}\r\n              />\r\n            </FormGroup>\r\n            <View style={gs.my2}>\r\n              {isLoading && <ActivityIndicator color={MD2Colors.red800} />}\r\n              <Button\r\n                style={gs.btn}\r\n                mode=\"contained\"\r\n                onPress={handleSubmit(onSubmit)}\r\n              >\r\n                Register\r\n              </Button>\r\n            </View>\r\n\r\n            <View style={[gs.formGroup, gs.flex, gs.flexRow, gs.justifyCenter]}>\r\n              <Paragraph variant=\"bodyLarge\">New here? </Paragraph>\r\n              <TouchableOpacity mode=\"text\">\r\n                <Text variant=\"bodyLarge\">Register here</Text>\r\n              </TouchableOpacity>\r\n            </View>\r\n          </View>\r\n        </View>\r\n      </View>\r\n    </SafeAreaView>\r\n  );\r\n};\r\n"
+        }
+    ]
+}

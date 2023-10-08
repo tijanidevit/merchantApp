@@ -3,13 +3,13 @@ import ApiClient from "../../services/ApiClient";
 
 const apiClient = new ApiClient("/auth");
 
-const login = async (loginData) => {
-  const { data } = await apiClient.post("/login", loginData);
+const register = async (registerData) => {
+  const { data } = await apiClient.post("/register", registerData);
   return data;
 };
 
-export const useLogin = () => {
-  return useMutation(login, {
+export const UseRegister = () => {
+  return useMutation(register, {
     onSuccess: (data) => {
       console.log("data", data);
     },

@@ -14,26 +14,27 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import WalletImg from "../../assets/img/wallet.jpg";
 import { useForm } from "react-hook-form";
 import { Alert, FormGroup, Input } from "../../components";
-import { LoginSchema } from "../../src";
+import { RegisterSchema } from "../../src";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useLogin } from "../../src/hooks/auth/UseLogin";
+// import { useRegister } from "../../src/hooks/auth/UseRegister";
 
-export const Login = ({ navigation }) => {
-  const { mutate, isLoading, isError, error } = useLogin();
+export const Register = ({ navigation }) => {
+  // const { mutate, isLoading, isError, error } = useRegister();
+
   const {
     control,
     handleSubmit,
     watch,
     mode: onChangeText,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(LoginSchema) });
+  } = useForm({ resolver: yupResolver(RegisterSchema) });
   const onSubmit = (data) => {
-    mutate(data);
+    // mutate(data);
   };
   return (
     <SafeAreaView>
       <View style={s.main}>
-        {isError && <Alert message={error.message} show={true} />}
+        {/* {isError && <Alert message={error.message} show={true} />} */}
 
         <View style={s.walletArea}>
           <Image
@@ -46,10 +47,21 @@ export const Login = ({ navigation }) => {
 
         <View style={gs.container}>
           <Text variant="headlineLarge" style={gs.bold}>
-            Login
+            Register
           </Text>
 
           <View style={gs.my2}>
+            <FormGroup>
+              <Input
+                label="Fullname"
+                placeholder="Adekunle Lawal"
+                control={control}
+                name="fullname"
+                icon="book"
+                keyboardType="default"
+              />
+            </FormGroup>
+
             <FormGroup>
               <Input
                 label="Email address"
@@ -73,24 +85,26 @@ export const Login = ({ navigation }) => {
               />
             </FormGroup>
             <View style={gs.my2}>
-              {isLoading && <ActivityIndicator color={MD2Colors.red800} />}
+              {/* {isLoading && <ActivityIndicator color={MD2Colors.red800} />} */}
               <Button
                 style={gs.btn}
                 mode="contained"
                 onPress={handleSubmit(onSubmit)}
               >
-                Login
+                Register
               </Button>
             </View>
 
             <View style={[gs.formGroup, gs.flex, gs.flexRow, gs.justifyCenter]}>
-              <Paragraph variant="bodyLarge">New here? </Paragraph>
+              <Paragraph variant="bodyLarge">
+                Already have an account?{" "}
+              </Paragraph>
               <TouchableOpacity
                 mode="text"
-                onPress={() => navigation.navigate("Register")}
+                onPress={() => navigation.navigate("Login")}
               >
                 <Text style={gs.textPrimary} variant="bodyLarge">
-                  Register here
+                  Login here
                 </Text>
               </TouchableOpacity>
             </View>

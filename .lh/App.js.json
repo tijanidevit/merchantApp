@@ -1,0 +1,22 @@
+{
+    "sourceFile": "App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1696799482993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1696799518823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { StyleSheet, Text, View } from \"react-native\";\n import { NavigationContainer } from \"@react-navigation/native\";\n import { createStackNavigator } from \"@react-navigation/stack\";\n import { Home } from \"./screens/Student\";\n-import { Login } from \"./screens/Auth\";\n+import { Login, Register } from \"./screens/Auth\";\n import { QueryClientProvider, QueryClient } from \"@tanstack/react-query\";\n \n const Stack = createStackNavigator();\n \n"
+                }
+            ],
+            "date": 1696799482993,
+            "name": "Commit-0",
+            "content": "import { StatusBar } from \"expo-status-bar\";\nimport { PaperProvider } from \"react-native-paper\";\nimport { StyleSheet, Text, View } from \"react-native\";\nimport { NavigationContainer } from \"@react-navigation/native\";\nimport { createStackNavigator } from \"@react-navigation/stack\";\nimport { Home } from \"./screens/Student\";\nimport { Login } from \"./screens/Auth\";\nimport { QueryClientProvider, QueryClient } from \"@tanstack/react-query\";\n\nconst Stack = createStackNavigator();\n\nexport default function App() {\n  const queryClient = new QueryClient();\n  return (\n    <PaperProvider>\n      <QueryClientProvider client={queryClient}>\n        <NavigationContainer>\n          <Stack.Navigator initialRouteName=\"Login\">\n            <Stack.Screen\n              name=\"Login\"\n              component={Login}\n              options={{ headerShown: false }}\n            />\n            <Stack.Screen\n              name=\"Register\"\n              component={Register}\n              options={{ headerShown: false }}\n            />\n          </Stack.Navigator>\n        </NavigationContainer>\n      </QueryClientProvider>\n    </PaperProvider>\n  );\n}\n"
+        }
+    ]
+}

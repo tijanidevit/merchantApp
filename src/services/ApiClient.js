@@ -1,14 +1,14 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:8000/api/",
+  baseURL: "http://127.0.0.1:8000/api/",
 });
 
 class ApiClient {
   endpoint;
 
   constructor(endpoint) {
-    this.endpoint = endpoint;
+    this.endpoint = "http://192.168.43.70:8000/api" + endpoint;
   }
 
   // const login = async (data) => {
@@ -23,6 +23,7 @@ class ApiClient {
 
   post = async (route, body) => {
     let endpoint = `${this.endpoint}${route}`;
+    console.log("endpoint", endpoint);
     return await axiosInstance.post(endpoint, body).then((res) => res.data);
   };
 

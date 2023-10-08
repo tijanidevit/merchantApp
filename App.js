@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Home } from "./screens/Student";
-import { Login } from "./screens/Auth";
+import { Login, Register } from "./screens/Auth";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const Stack = createStackNavigator();
@@ -19,6 +19,11 @@ export default function App() {
             <Stack.Screen
               name="Login"
               component={Login}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Register"
+              component={Register}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>

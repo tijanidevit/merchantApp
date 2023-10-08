@@ -64,4 +64,8 @@ module.exports = StyleSheet.create({
   mr1: {
     marginRight: 7.5,
   },
+
+  textPrimary: {
+    color: primaryColour,
+  },
 });
