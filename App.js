@@ -15,7 +15,7 @@ export default function App() {
     <PaperProvider>
       <QueryClientProvider client={queryClient}>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Login">
+          <Stack.Navigator initialRouteName="Home">
             <Stack.Screen
               name="Login"
               component={Login}
@@ -24,6 +24,11 @@ export default function App() {
             <Stack.Screen
               name="Register"
               component={Register}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Home"
+              component={Home}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>

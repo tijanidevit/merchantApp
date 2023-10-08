@@ -30,6 +30,7 @@ export const Register = ({ navigation }) => {
   } = useForm({ resolver: yupResolver(RegisterSchema) });
   const onSubmit = (data) => {
     // mutate(data);
+    navigation.navigate("Home");
   };
   return (
     <SafeAreaView>
@@ -57,7 +58,7 @@ export const Register = ({ navigation }) => {
                 placeholder="Adekunle Lawal"
                 control={control}
                 name="fullname"
-                icon="book"
+                icon="account"
                 keyboardType="default"
               />
             </FormGroup>
@@ -78,7 +79,7 @@ export const Register = ({ navigation }) => {
                 label="Password"
                 placeholder="******"
                 control={control}
-                icon="eye"
+                icon="lock-clock"
                 name="password"
                 secureTextEntry={true}
                 onPress={() => console.log("pressed", "pressed")}

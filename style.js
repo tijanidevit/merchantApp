@@ -1,10 +1,16 @@
 "use strict";
 import { StyleSheet } from "react-native";
-import { primaryColour } from "./src/utils/constants";
+import { primaryColour, secondaryColour } from "./src/utils/constants";
 
 module.exports = StyleSheet.create({
   my2: {
     marginVertical: 15,
+  },
+  mb1: {
+    marginBottom: 7.5,
+  },
+  mb0x5: {
+    marginBottom: 4.5,
   },
 
   strong: {
@@ -29,6 +35,10 @@ module.exports = StyleSheet.create({
 
   bold: {
     fontWeight: "bold",
+  },
+
+  textGrey: {
+    color: "grey",
   },
 
   formGroup: {
@@ -65,7 +75,27 @@ module.exports = StyleSheet.create({
     marginRight: 7.5,
   },
 
+  mr1x5: {
+    marginRight: 10.75,
+  },
+
   textPrimary: {
     color: primaryColour,
+  },
+
+  textSecondary: {
+    color: secondaryColour,
+  },
+
+  bgPrimary: {
+    backgroundColor: primaryColour,
+  },
+
+  bgSecondary: {
+    backgroundColor: secondaryColour,
+  },
+
+  border15: {
+    borderRadius: "15%",
   },
 });
