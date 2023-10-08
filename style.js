@@ -1,6 +1,6 @@
 "use strict";
 import { StyleSheet } from "react-native";
-import { primaryColour } from "./utils/constants";
+import { primaryColour } from "./src/utils/constants";
 
 module.exports = StyleSheet.create({
   my2: {
@@ -62,6 +62,6 @@ module.exports = StyleSheet.create({
   },
 
   mr1: {
-    marginLeft: 7.5,
+    marginRight: 7.5,
   },
 });
